@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Jeopardy</title>
+  </head>
+  <body>
+    <h1>Categories!</h1>
+    <div id='content'>
+      <ul>
+        {% for each_category in categories %}
+          <li><a href="/clues?category={{each_category.id}}">{{each_category.title}}</a></li>
+        {% endfor %}
+      </ul>
+      <a href="/categories?page={{page - 1}}">prev</a> <a href="/categories?page={{page + 1}}">next</a>
+    </div>
+  </body>
+</html>
